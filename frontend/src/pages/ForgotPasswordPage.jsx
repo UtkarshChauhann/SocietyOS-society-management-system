@@ -16,7 +16,7 @@ export const ForgotPasswordPage = () => {
   const submit = async (event) => {
     event.preventDefault(); setError(''); setLoading(true);
     try {
-      await api.post('/auth/forgot-password', { email });
+      await api.post('/forgot-password', { email });
       navigate(`/verify-otp?email=${encodeURIComponent(email)}`);
     } catch (err) { setError(getErrorMessage(err)); }
     finally { setLoading(false); }

@@ -21,7 +21,7 @@ export const ResetPasswordPage = () => {
     event.preventDefault(); setError(''); setSuccess('');
     if (password !== confirmPassword) { setError('Passwords do not match'); return; }
     setLoading(true);
-    try { const { data } = await api.post('/auth/reset-password', { resetToken: params.get('token'), password }); setSuccess(data.message); setTimeout(() => navigate('/login'), 1200); }
+    try { const { data } = await api.post('/reset-password', { resetToken: params.get('token'), password }); setSuccess(data.message); setTimeout(() => navigate('/login'), 1200); }
     catch (err) { setError(getErrorMessage(err)); }
     finally { setLoading(false); }
   };

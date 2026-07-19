@@ -18,7 +18,7 @@ export const VerifyOtpPage = () => {
   const submit = async (event) => {
     event.preventDefault(); setError(''); setLoading(true);
     try {
-      const { data } = await api.post('/auth/verify-otp', { email, otp });
+      const { data } = await api.post('/verify-otp', { email, otp });
       navigate(`/reset-password?token=${encodeURIComponent(data.resetToken)}`);
     } catch (err) { setError(getErrorMessage(err)); }
     finally { setLoading(false); }
