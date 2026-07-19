@@ -15,6 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const allowedOrigins = new Set([
   env.clientUrl,
+  'https://nestra-society.vercel.app',
   'http://localhost:5173',
   'http://127.0.0.1:5173'
 ]);
